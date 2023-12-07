@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
     },
     date_birth:{
         type: Date,
-        required: true
+//          required: true
     },
     dni:{
         type: Number,
