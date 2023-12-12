@@ -1,11 +1,8 @@
-//import UsersManager from "../dao/mongoManagers/usersManager.mongo.js";
 import UsersService from "../services/users.services.js";
 
-//const userManager = new UsersManager();
 const userService = new UsersService();
 
 export const getUsers = async (req, res) =>{
-//    const users = await userManager.getUsers();
     const users = await userService.getUsers();
     // TO DO: Mover la lógica de la validación de usuarios al manager
     if(users.length === 0){
@@ -17,8 +14,8 @@ export const getUsers = async (req, res) =>{
 
 export const getUserById = async (req, res) =>{
     const id = req.params.id;
-    const userId = await userManager.getUserById(id);
-    res.send(userId);
+    const userId = await userService.getUserById(id);
+    res.send({status: 1, userId: userId});
 }
 
 export const createNewUser = async (req, res) =>{
@@ -37,6 +34,6 @@ export const updateUser = async (req, res) =>{
 
 export const deleteUser = async (req, res) =>{
     const id = req.params.id;
-    const userToDelete = await userManager.deleteUser(id);
+    const userToDelete = await userService.deleteUser(id);
     res.send(userToDelete);
 }

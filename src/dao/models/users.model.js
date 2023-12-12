@@ -13,15 +13,26 @@ const userSchema = new mongoose.Schema({
     },
     date_birth:{
         type: Date,
-//          required: true
     },
     dni:{
         type: Number,
         required: true
     },
+    user:{
+        type: String,
+        required: true
+    },
     role: {
         type: String,
         default: 'user'
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    mail: {
+        type: String,
+        required: true
     }
 });
 

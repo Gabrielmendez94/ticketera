@@ -9,8 +9,8 @@ export default class UsersService {
         return this.usersRepository.getUsers();
     }
 
-    getUserById = async()=>{
-        return this.usersRepository.getUserById();
+    getUserById = async(id)=>{
+        return this.usersRepository.getUserById(id);
     }
     
     createNewUser = async() =>{
@@ -20,8 +20,8 @@ export default class UsersService {
 
     }
     
-    deleteUser = async()=>{
-
+    deleteUser = async(id)=>{
+        return this.usersRepository.deleteUser(id);
     }
 
 
