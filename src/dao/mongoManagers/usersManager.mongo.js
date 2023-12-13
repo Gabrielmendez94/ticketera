@@ -34,7 +34,7 @@ export default class UsersManager{
 
     async updateUser(id, updatedFields){
         try{
-            const {first_name, last_name, date_birth, dni, role} = updatedFields;
+            const {first_name, last_name, date_birth, dni, user, role, location, mail} = updatedFields;
             const updatedUser = await this.userModel.findByIdAndUpdate(id, updatedFields);
             if(!updatedUser){
                 throw new Error('User not found');

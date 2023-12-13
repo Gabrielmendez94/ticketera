@@ -13,8 +13,16 @@ export default class UsersService {
         return this.usersRepository.getUserById(id);
     }
     
-    createNewUser = async() =>{
-        return this.usersRepository.createNewUser();
+    createNewUser = async(addUser) =>{
+        const newUser = await this.usersRepository.createNewUser(addUser);
+        
+        const {first_name, last_name, date_birth, dni, user, role, location, mail} = addUser;
+
+        if (!first_name || !last_name || !dni || !user || !location || !mail){
+            throw new Error ('Failed to add a New User')
+        }else{
+            return newUser;
+        }
     }
     updateUser = async()=>{
 

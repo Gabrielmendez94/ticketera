@@ -20,7 +20,7 @@ export const getUserById = async (req, res) =>{
 
 export const createNewUser = async (req, res) =>{
     const newUser = req.body;
-    const createUser = await userManager.createNewUser(newUser);
+    const createUser = await userService.createNewUser(newUser);
     res.send(createUser);
 }
 
